@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Alta</title>
+
+    <style>
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: darkred;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: indianred;
+        }
+
+        .divclass {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="divclass">
+        <h1>Añadir nuevo vehículo</h1>
+        <hr />
+        <form method="post" action="/Home/Alta">
+            <label>Marca</label>
+            <br />
+            <input type="text" name="marca" />
+            <br />
+            <label>Modelo</label>
+            <br />
+            <input type="text" name="modelo" />
+            <br />
+            <label>Número de puertas</label>
+            <br />
+            <input type="text" name="numPuertas" />
+            <br />
+            <label>Color</label>
+            <br />
+            <input type="text" name="color" />
+            <br />
+            <label>Kilómetros</label>
+            <br />
+            <input type="text" name="kilometros" />
+            <br />
+            <label>Tipo de vehículo</label>
+            <br />
+            <select id="tipoVehiculo" name="tipoVehiculo">
+                <option value="Utilitario">Utilitario</option>
+                <option value="Coupé">Coupé</option>
+                <option value="Familiar">Familiar</option>
+                <option value="SUV">SUV</option>
+                <option value="Industrial">Industrial</option>
+            </select>
+            <br />
+            <label>Garantía (en meses)</label>
+            <br />
+            <input type="text" name="garantia" />
+            <br />
+            <label>En stock (true o false):</label>
+            <br />
+            @*<input type="text" name="stock" />*@
+            <select id="stock" name="stock">
+                <option value="true">Sí</option>
+                <option value="false">No</option>
+            </select>
+            <br />
+            <label>Fotografía:</label>
+            <br />
+            <input type="text" name="fotografia" />
+            <br />
+            <input type="submit" value="Añadir" />
+        </form>
+    </div>
+</body>
+</html>

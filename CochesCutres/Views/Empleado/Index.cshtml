@@ -1,0 +1,110 @@
+﻿@model IEnumerable<CochesCutres.Models.Empleado>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color: darkred;
+            color: white;
+        }
+
+        .boton {
+            width: 100%;
+            background-color: darkred;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            .boton:hover {
+                width: 100%;
+                background-color: indianred;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+    <h1 style="color: darkred">Coches Cutres</h1>
+    <hr style="border: 1px solid darkred" />
+    <h2 style="color: darkred">Lista de empleados</h2>
+    <div>
+        <table class="table">
+            <tr>
+                <th>
+                    NIF
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Apellidos
+                </th>
+                <th>
+                    Teléfono
+                </th>
+                <th>
+                    Dirección
+                </th>
+                <th>
+                    Email
+                </th>
+            </tr>
+
+            @foreach (var empleado in Model)
+            {
+                <tr>
+                    <td>
+                        @empleado.nif
+                    </td>
+                    <td>
+                        @empleado.nombre
+                    </td>
+                    <td>
+                        @empleado.apellidos
+                    </td>
+                    <td>
+                        @empleado.telefono
+                    </td>
+                    <td>
+                        @empleado.direccion
+                    </td>
+                    <td>
+                        @empleado.email
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <br />
+        <a class="boton" href="/Empleado/Alta">Añadir empleado</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+﻿@model IEnumerable<CochesCutres.Models.Cliente>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color: darkred;
+            color: white;
+        }
+
+        .boton {
+            width: 100%;
+            background-color: darkred;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            width: 100%;
+            background-color: indianred;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: darkred">Coches Cutres</h1>
+    <hr style="border: 1px solid darkred" />
+    <h2 style="color: darkred">Lista de clientes</h2>
+    <div>
+        <table class="table">
+            <tr>
+                <th>
+                    NIF
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Apellidos
+                </th>
+                <th>
+                    Teléfono
+                </th>
+                <th>
+                    Dirección
+                </th>
+                <th>
+                    Email
+                </th>
+            </tr>
+
+            @foreach (var cliente in Model)
+            {
+                <tr>
+                    <td>
+                        @cliente.nif
+                    </td>
+                    <td>
+                        @cliente.nombre
+                    </td>
+                    <td>
+                        @cliente.apellidos
+                    </td>
+                    <td>
+                        @cliente.telefono
+                    </td>
+                    <td>
+                        @cliente.direccion
+                    </td>
+                    <td>
+                        @cliente.email
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <br />
+        <a class="boton" href="/Cliente/Alta">Añadir cliente</a>
+    </div>
+</body>
+</html>
